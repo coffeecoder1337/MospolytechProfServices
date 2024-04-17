@@ -1,6 +1,24 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
 
 {% block content %}
 
+<div class="header-content">
+	<div class="carousel">
+	  <div class="carousel-item"><img src="{% static 'backend/images/slider/1.jpg' %}" alt=""></div>
+	  <div class="carousel-item"><img src="{% static 'backend/images/slider/2.jpg' %}" alt=""></div>
+	</div>
+	<div class="content">
+		<div class="content-wrap">
+			<p>Стремление к совершенству</p>
+			<h2>Профорганизация Московского Политеха</h2>
+			<button>Вступить</button>
+		</div>
+	</div>
+</div>
+
 
 {% endblock %}
+
