@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section id="news">
+    {% for n in news %}
+    {% if forloop.counter|divisibleby:2 %}
+        <div class="news_container">
+            <div class="news_photo br">
+                {% if n.photo %}
+                <img src="{{ n.photo.url }}" alt="">
+                {% else %}
+                <img src="{% static 'backend/images/news/placeholder.png' %}" alt="">
+                {% endif %}
+            </div>
+            <div class="news_text pr tar">
+                <h2 class="news_text_head gb ">{{ n.title }}</h2>
+                <p class="news_text_description gr">{{ n.content }}</p>
+                <div class="date">
+                    <div></div>
+                    <p class="news-date gb">{{ n.time_created|date:'d.m.Y' }}</p>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    {% else %}
+        <div class="news_container">
+            <div class="news_text pl">
+                <h2 class="news_text_head gb">{{ n.title }}</h2>
+                <p class="news_text_description gr">{{ n.content }}</p>
+                    <div class="date">
+                        
+                        <p class="news-date gb">{{ n.time_created|date:'d.m.Y' }}</p>
+                        <div></div>
+                        
+                    </div>
+            </div>
+            <div class="news_photo bl">
+                {% if n.photo %}
+                <img src="{{ n.photo.url }}" alt="">
+                {% else %}
+                <img src="{% static 'backend/images/news/placeholder.png' %}" alt="">
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+    {% endfor %}
+
+    
+
+    
+    
+</section>
+{% endblock %}

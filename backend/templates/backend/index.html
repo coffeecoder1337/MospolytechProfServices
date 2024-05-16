@@ -41,7 +41,30 @@
 		Последние новости
 	</h2>
 	<div class="news-wrap">
-		<div class="news-card">
+		{% for n in news %}
+			<div class="news-card">
+				{% if n.photo %}
+                <img class="news-img" src="{{ n.photo.url }}" alt="">
+                {% else %}
+                <img src="{% static 'backend/images/news/placeholder.png' %}" alt="">
+                {% endif %}
+				<div class="news-description invisible">
+					<div class="news-description-top">
+						<p class="news-description-p gr">
+							<a href="#">
+								{{ n.title }}
+							</a>
+						</p>
+						<p class="news-date gb">{{ n.time_created|date:'d.m.Y' }}</p>
+					</div>
+					<div class="news-description-bottom">
+						<button class="read-more gb">Читать далее</button>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+
+		<!-- <div class="news-card">
 			<img class="news-img" src="{% static 'backend/images/news/1.jpg' %}" alt="">
 			<div class="news-description invisible">
 				<div class="news-description-top">
@@ -90,12 +113,12 @@
 					<button class="read-more gb">Читать далее</button>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 	</div>
-	<button class="learn-more gr">
+	<a href="{% url 'news' %}" class="learn-more gr">
 		Узнать больше
-	</button>
+	</a>
 </div>
 
 

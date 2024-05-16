@@ -16,7 +16,7 @@
 * {
 	padding: 0;
 	margin: 0;
-
+	box-sizing: border-box;
 }
 
 
@@ -35,6 +35,28 @@ body {
 
 .geb {
 	font-family: 'Gilroy Extrabold';
+}
+
+.pl {
+	padding-left: 30px;
+}
+
+.pr {
+	padding-right: 30px;
+}
+
+.tar {
+	text-align: right;
+}
+
+.br {
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.bl {
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
 }
 
 .top {
@@ -258,18 +280,27 @@ body {
 	bottom: 0;
 	background-color: #fff;
 	color: #000;
-
+	width: 100%;
 	opacity: 0;
 	transition: .3s;
 }
 
-.news-description .news-date {
+/* .news-date {
 	display: flex;
 	align-items: center;
 	height: 30px;
 	border: 1px solid #000;
 	border-radius: 5px;
 	padding: 7px;
+	width: 100px;
+	justify-content: center;
+} */
+
+.news-date {
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 7px 10px;
+	align-self: flex-start;
 }
 
 .news-description-top {
@@ -278,7 +309,7 @@ body {
 }
 
 .news-description-p {
-	width: 70%;
+	width: 65%;
 
 }
 
@@ -305,22 +336,27 @@ body {
 
 }
 
-.news-wrap {
+.news .news-wrap {
 	display: flex;
 	justify-content: space-around;
 	width: 80%;
 }
 
 .news .learn-more {
+	text-align: center;
 	background-color: #fff;
 	color: #000;
 	border-radius: 20px;
 	border: 1px solid #000;
 	font-size: 24px;
-	width: 225px;
-	height: 55px;
+	/* width: 225px;
+	height: 55px; */
+	padding: 20px 40px;
+	text-decoration: none;
 	cursor: pointer;
 }
+
+
 
 
 .carousel-questions .slick-track {
@@ -518,3 +554,55 @@ footer {
 .vk-link {
 	margin-right: 30px;
 }
+
+
+
+/* news page */
+
+#news {
+	margin-top: 80px;
+}
+
+#news .news_container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 80px;
+}
+
+#news .news_text_head {
+	font-size: 52px;
+	margin-bottom: 30px;
+}
+
+#news .news_text_description {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+#news .news_photo {
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 550px;
+	height: 400px;
+}
+
+#news .news_text {
+	width: 40%;
+}
+
+#news .news_photo img {
+	width: 100%;
+	height: auto;
+}
+
+#news .news-date {
+	width: 100px;
+}
+
+#news .date {
+	display: flex;
+	justify-content: space-between;
+}
+
