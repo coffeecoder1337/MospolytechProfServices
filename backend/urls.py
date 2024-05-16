@@ -3,5 +3,6 @@ from django.urls import path
 from backend import views
 
 urlpatterns = [
-    path('', views.main_page_view, name='home'),
+    path('', views.ProfHome.as_view(), name='home'),
+    path('news/', views.ProfNews.as_view(), name='news'),
 ]
